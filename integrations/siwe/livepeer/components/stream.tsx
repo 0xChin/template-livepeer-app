@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Broadcast, useCreateStream } from "@livepeer/react"
 
+import { absoluteUrl } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 export function Stream() {
@@ -18,9 +19,7 @@ export function Stream() {
   }, [stream])
 
   const copyStreamLink = async () => {
-    const streamLink = `http://localhost:3000/stream/${
-      stream?.playbackId ?? ""
-    }`
+    const streamLink = `${absoluteUrl(`/stream/${stream?.playbackId ?? ""}`)}`
     await navigator.clipboard.writeText(streamLink)
     alert("Stream URL copied to clipboard!")
   }
