@@ -19,6 +19,8 @@
       "@/*": ["./*"],
       "@/actions/*": ["integrations/*"]
     },
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "types": ["orbisclub-components"],
     "plugins": [
       {
         "name": "next"

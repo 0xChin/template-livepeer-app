@@ -1,6 +1,6 @@
 "use client"
 
-import { Stream } from "@/integrations/siwe/livepeer/components/stream"
+import { Stream } from "@/integrations/livepeer/components/stream"
 
 export default function HomePage() {
   return (

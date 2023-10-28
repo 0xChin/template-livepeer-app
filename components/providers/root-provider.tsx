@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes"
 
 import { useIsMounted } from "@/lib/hooks/use-is-mounted"
 import { Privy } from "@/components/providers/privy"
-import { Livepeer } from "@/integrations/siwe/livepeer/components/livepeer"
+import { Livepeer } from "@/integrations/livepeer/components/livepeer"
 
 const queryClient = new QueryClient()
 interface RootProviderProps {

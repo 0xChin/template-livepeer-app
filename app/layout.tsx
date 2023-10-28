@@ -1,5 +1,6 @@
 import "@/styles/app.css"
 import "@/styles/globals.css"
+import "@orbisclub/components/dist/index.modern.css"
 
 import { ReactNode } from "react"
 import { env } from "@/env.mjs"
