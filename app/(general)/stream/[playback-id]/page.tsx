@@ -7,13 +7,6 @@ import { Chat } from "@orbisclub/components"
 
 import { AvatarBlockie } from "@/components/avatar-blockie"
 
-interface StreamData {
-  name: string
-  category: string
-  user: string
-  tags: string[]
-}
-
 export default function PlaybackPage() {
   const pathname = usePathname()
   const id = pathname.split("/")[2]
@@ -38,6 +31,7 @@ export default function PlaybackPage() {
       <div className="w-[60%]">
         <Player
           playbackId={stream.playbackId}
+          clipLength={30}
           autoPlay={true}
           objectFit="cover"
         />

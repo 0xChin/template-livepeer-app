@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@livepeer/react':
-    specifier: ^2.6.0
-    version: 2.6.0(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0)
+    specifier: 3.0.1
+    version: 3.0.1(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0)
   '@prisma/client':
     specifier: ^4.8.1
     version: 4.11.0(prisma@4.11.0)
@@ -6875,12 +6875,12 @@ packages:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.1.1
 
-  /@livepeer/core-react@1.8.0(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0):
-    resolution: {integrity: sha512-DRciHEJgpALO2a9gHAy75g9VpaU6yszALP/gatO3W/+x9/o6MSR5PRhFg5eMDJA8o1ua39ZlaDu0/irLHIeE8g==}
+  /@livepeer/core-react@2.0.1(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0):
+    resolution: {integrity: sha512-4NsR62ikthhApQVugsm4BQ3flYyOa8pVRp1EaexH+XFYBsT/fFSpOr71I6fbosgoZwYws5lhZfdw1jHiRJajJQ==}
     peerDependencies:
       react: '>=17.0.0'
     dependencies:
-      '@livepeer/core': 1.8.0(react@18.2.0)
+      '@livepeer/core': 2.0.1(react@18.2.0)
       '@tanstack/query-async-storage-persister': 4.29.23
       '@tanstack/query-core': 4.29.23
       '@tanstack/react-query': 4.29.23(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0)
@@ -6895,8 +6895,30 @@ packages:
       - react-native
     dev: false
 
-  /@livepeer/core@1.8.0(react@18.2.0):
-    resolution: {integrity: sha512-Sr+DplfGfhpv2Arh53tTTL9DyPEzlVAzy+eXd8+PMIlXLVOHTgGfDgpfpaeSCB8v8WlJtrgX50vFdSWyUyxi3g==}
+  /@livepeer/core-web@3.0.1(react@18.2.0):
+    resolution: {integrity: sha512-050XvO2Rk9JZmjHdnJYpK5VMZ9XFEc4vTRbPlumXY7RmzR88poCGwzvLLajDU1TU/iACO1RHlLE7WJtdkRCkWA==}
+    peerDependencies:
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      '@livepeer/core': 2.0.1(react@18.2.0)
+      '@stitches/core': 1.2.8
+      core-js: 3.31.1
+      cross-fetch: 4.0.0
+      hls.js: 1.4.12
+      ms: 3.0.0-canary.1
+      react: 18.2.0
+      tus-js-client: 3.1.0
+      zustand: 4.3.9(react@18.2.0)
+    transitivePeerDependencies:
+      - encoding
+      - immer
+    dev: false
+
+  /@livepeer/core@2.0.1(react@18.2.0):
+    resolution: {integrity: sha512-gWu1pXARnQtU3t8xRhPPrzlYdbboE0cB7FbBHRJW+McpA4IfHD8xoRxb4d7kF0ap28pG6VsHWu6q0hxaPgAswg==}
     peerDependencies:
       react: '>=17.0.0'
     peerDependenciesMeta:
@@ -6914,8 +6936,8 @@ packages:
       - immer
     dev: false
 
-  /@livepeer/react@2.6.0(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0):
-    resolution: {integrity: sha512-CH5hpONn4eiL6Qqf3neVzduvMbEkYa9DP1wliEGTpq/rAb8kfdrKGVOeEKkx7GoIIdHNPf0GIwFIggiqu/l8yw==}
+  /@livepeer/react@3.0.1(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0):
+    resolution: {integrity: sha512-iSEVjaBervJpoS3+XxwNR4mtZdObuMz0xMAWEGCP0yJTPyMTZUhQf6/pG8mdCv1+nLyhp0HouaDUaMku0pORwQ==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -6923,16 +6945,16 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@livepeer/core-react': 1.8.0(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0)
+      '@livepeer/core-react': 2.0.1(react-dom@18.2.0)(react-native@0.72.4)(react@18.2.0)
+      '@livepeer/core-web': 3.0.1(react@18.2.0)
       '@radix-ui/react-dialog': 1.0.4(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-popover': 1.0.6(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-select': 1.2.2(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
       '@stitches/react': 1.2.8(react@18.2.0)
       core-js: 3.31.1
-      livepeer: 2.6.0(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      zustand: 4.3.8(react@18.2.0)
+      zustand: 4.3.9(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -18516,8 +18538,8 @@ packages:
   /hey-listen@1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
 
-  /hls.js@1.4.10:
-    resolution: {integrity: sha512-wAVSj4Fm2MqOHy5+BlYnlKxXvJlv5IuZHjlzHu18QmjRzSDFQiUDWdHs5+NsFMQrgKEBwuWDcyvaMC9dUzJ5Uw==}
+  /hls.js@1.4.12:
+    resolution: {integrity: sha512-1RBpx2VihibzE3WE9kGoVCtrhhDWTzydzElk/kyRbEOLnb1WIE+3ZabM/L8BqKFTCL3pUy4QzhXgD1Q6Igr1JA==}
     dev: false
 
   /hmac-drbg@1.0.1:
@@ -20897,29 +20919,6 @@ packages:
       '@lit/reactive-element': 1.6.1
       lit-element: 3.3.2
       lit-html: 2.7.3
-
-  /livepeer@2.6.0(react@18.2.0):
-    resolution: {integrity: sha512-tURkBvJQi0nyS5WlFHhKyRGx0qKqGt/DbKSzhUwJ9fAzT3GAlipujgKVOc3wnNWIj76LQrCp7onUmsrrkFRGkQ==}
-    peerDependencies:
-      react: '>=17.0.0'
-    peerDependenciesMeta:
-      react:
-        optional: true
-    dependencies:
-      '@livepeer/core': 1.8.0(react@18.2.0)
-      '@stitches/core': 1.2.8
-      core-js: 3.31.1
-      cross-fetch: 3.1.5(encoding@0.1.13)
-      hls.js: 1.4.10
-      ms: 3.0.0-canary.1
-      multiformats: 9.9.0
-      react: 18.2.0
-      tus-js-client: 3.1.0
-      zustand: 4.3.8(react@18.2.0)
-    transitivePeerDependencies:
-      - encoding
-      - immer
-    dev: false
 
   /load-tsconfig@0.2.3:
     resolution: {integrity: sha512-iyT2MXws+dc2Wi6o3grCFtGXpeMvHmJqS27sMPGtV2eUu4PeFnG+33I8BlFK1t1NWMjOpcx9bridn5yxLDX2gQ==}
@@ -30071,22 +30070,6 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
-
-  /zustand@4.3.8(react@18.2.0):
-    resolution: {integrity: sha512-4h28KCkHg5ii/wcFFJ5Fp+k1J3gJoasaIbppdgZFO4BPJnsNxL0mQXBSFgOgAdCdBj35aDTPvdAJReTMntFPGg==}
-    engines: {node: '>=12.7.0'}
-    peerDependencies:
-      immer: '>=9.0'
-      react: '>=16.8'
-    peerDependenciesMeta:
-      immer:
-        optional: true
-      react:
-        optional: true
-    dependencies:
-      react: 18.2.0
-      use-sync-external-store: 1.2.0(react@18.2.0)
-    dev: false
 
   /zustand@4.3.9(react@18.2.0):
     resolution: {integrity: sha512-Tat5r8jOMG1Vcsj8uldMyqYKC5IZvQif8zetmLHs9WoZlntTHmIoNM8TpLRY31ExncuUvUOXehd0kvahkuHjDw==}
