@@ -38,6 +38,7 @@
   "packageManager": "pnpm@7.1.8",
   "dependencies": {
     "@livepeer/react": "3.0.1",
+    "@orbisclub/orbis-sdk": "^0.4.88",
     "@prisma/client": "^4.8.1",
     "@privy-io/react-auth": "^1.40.5",
     "@privy-io/wagmi-connector": "^0.1.4",
