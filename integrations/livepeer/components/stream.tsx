@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Broadcast, Player, useCreateStream } from "@livepeer/react"
-import { FaCopy } from "react-icons/fa"
+import { FaCopy, FaStop } from "react-icons/fa"
 import { useAccount } from "wagmi"
 
 import { absoluteUrl } from "@/lib/utils"
@@ -24,6 +24,7 @@ export function Stream() {
   const [streamData, setStreamData] = useState(
     JSON.stringify(initialStreamData)
   )
+  const [streaming, setStreaming] = useState(false)
   const [tagInput, setTagInput] = useState("")
   const [urlCopied, setUrlCopied] = useState(false)
   const [streamSource, setStreamSource] = useState("browser")
@@ -38,6 +39,16 @@ export function Stream() {
     data: stream,
     status,
   } = useCreateStream({ name: streamData })
+
+  const startStream = () => {
+    createStream?.()
+    setStreaming(true)
+  }
+
+  const stopStream = () => {
+    setStreamData(JSON.stringify(initialStreamData))
+    setStreaming(false)
+  }
 
   const copyStreamLink = async () => {
     const streamLink = `${absoluteUrl(`/stream/${stream?.id ?? ""}`)}`
@@ -149,12 +160,16 @@ export function Stream() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <div className="w-[600px] rounded-lg bg-[#FAFAFA] p-8 shadow-md">
-        {stream ? (
+    <div className="flex h-[70vh] flex-col items-center justify-center p-4">
+      <h1 className="text-3xl font-bold">Live Streaming</h1>
+      <p className="mb-4 text-gray-600">
+        Start or stop your live broadcast and manage stream settings.
+      </p>
+      <div className="mx-2 mt-5 w-full max-w-[600px] rounded-lg bg-white p-8 shadow-md">
+        {streaming && stream ? (
           // Display Broadcast and Share Stream Button if stream exists
           <>
-            <h1 className="mb-4 text-3xl">Broadcasting</h1>
+            <h2 className="mb-4 text-2xl font-semibold">Broadcasting</h2>
             {streamSource === "obs" ? (
               <>
                 {renderObsInstructions()}
@@ -172,9 +187,16 @@ export function Stream() {
             >
               {urlCopied ? "Copied to clipboard!" : "Share Stream"}
             </Button>
+            <Button
+              onClick={stopStream}
+              variant={"destructive"}
+              className="mt-2 w-full rounded"
+            >
+              <FaStop className="mr-2" />
+              Stop Stream
+            </Button>
           </>
         ) : (
-          // Display Stream Creation Form if no stream exists
           <>
             <h1 className="mb-4 text-3xl">Create a New Stream</h1>
             <label>Stream Source</label>
@@ -241,7 +263,7 @@ export function Stream() {
             </div>
             <Button
               disabled={status === "loading" || !createStream}
-              onClick={() => createStream?.()}
+              onClick={startStream}
               className="mt-2 w-full rounded bg-emerald-500 p-2 text-white"
             >
               Create Stream
