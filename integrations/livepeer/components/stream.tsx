@@ -160,7 +160,7 @@ export function Stream() {
   }
 
   return (
-    <div className="flex h-[70vh] flex-col items-center justify-center p-4">
+    <div className="flex flex-col items-center justify-center p-4">
       <h1 className="text-3xl font-bold">Live Streaming</h1>
       <p className="mb-4 text-gray-600">
         Start or stop your live broadcast and manage stream settings.
