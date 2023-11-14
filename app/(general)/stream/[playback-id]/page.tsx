@@ -70,7 +70,7 @@ export default function PlaybackPage() {
           objectFit="cover"
         />
         {streamData && (
-          <div className="relative mt-4 flex justify-between">
+          <div className="relative mt-4 flex">
             <div className="ml-2 flex items-center md:ml-0">
               <AvatarBlockie
                 className="mr-4 w-20 rounded-full"
@@ -109,7 +109,7 @@ export default function PlaybackPage() {
           context={`kjzl6cwe1jw147lgmx261ulk4ajfyqt0gs7wlqhgtks6148hoi2axziydysbku6:${stream.playbackId}`}
         />
       </div>
-      <div className="absolute inset-x-0 bottom-0 flex justify-center p-4 md:hidden">
+      <div className="absolute inset-x-0 bottom-[-25px] flex justify-center pt-5 md:hidden">
         <Button
           onClick={toggleChat}
           variant={"emerald"}
