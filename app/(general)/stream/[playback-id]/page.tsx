@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import error from "next/error"
 import { usePathname } from "next/navigation"
 import { Asset, Player, useStream } from "@livepeer/react"
 import { Chat } from "@orbisclub/components"
@@ -33,13 +34,22 @@ export default function PlaybackPage() {
     if (stream) {
       const parsedData = JSON.parse(stream.name)
       setStreamData(parsedData)
+
+      setInterval(async () => {
+        // eslint-disable-next-line
+        const { data } = await orbis.getPosts({
+          context: `kjzl6cwe1jw147lgmx261ulk4ajfyqt0gs7wlqhgtks6148hoi2axziydysbku6:${stream.playbackId}`,
+        })
+
+        console.log(data)
+      }, 1500)
     }
   }, [stream])
 
   const toggleChat = () => setShowChat((prev) => !prev)
 
   const updateChat = () => setChatKey(chatKey + 1)
-
+  3
   return stream ? (
     <div className="relative flex w-full justify-center">
       <div
