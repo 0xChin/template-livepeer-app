@@ -40,7 +40,9 @@ export default function ClipPage() {
     })
     console.log(data)
 
-    const queryParams = `?asset=${asset?.id ?? ""}` + buildQueryParams(data)
+    const queryParams =
+      `?asset=${asset?.id ?? ""}&video=${asset?.downloadUrl ?? ""}` +
+      buildQueryParams(data)
     const shareUrl =
       typeof window !== "undefined"
         ? `${apiBaseUrl}/api/dev?url=${encodeURIComponent(
